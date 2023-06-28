@@ -1,0 +1,18 @@
+<view class="main" style='z-index:100'>
+    <view class="qrcode item">
+      <canvas style="width: 280px; height: 280px;" canvas-id="myQrcode" bindtap='update'></canvas>
+    </view>
+    <view class="round left"></view>
+    <view class="round right"></view>
+    <view class="intro item">
+      <view class="title">说明：</view>
+      <view>1.二维码在1分钟内有效，一分钟自动刷新</view>
+      <view>2.二维码仅一次有效，请勿重复使用</view>
+      <view>3.二维码仅用于解锁门禁，请用户妥善保管</view>
+    </view>
+</view>
+  <van-notify id="van-notify"/>
+<van-tabbar bindtap="onReturn">
+  <van-tabbar-item icon="replay">返回</van-tabbar-item>
+</van-tabbar>  
+

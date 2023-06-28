@@ -1,0 +1,34 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100rpx 0;
+  box-sizing: border-box;
+  background-size:100%;
+  background-image:url('https://img.zcool.cn/community/01c3f557f9177ea84a0e282b6507b8.png@1280w_1l_2o_100sh.png');
+} 

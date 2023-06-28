@@ -1,0 +1,7 @@
+/* pages/record/record.wxss */
+/* pages/auth/auth.wxss */
+.userinfo-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+}

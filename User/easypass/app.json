@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/index/blank",
+    "pages/access/access",
+    "pages/index/index",
+    "pages/community/community",
+    "pages/community/community-plus",
+    "pages/auth/auth",
+    "pages/auth/auth-detail",
+    "pages/auth/auth-plus",
+    "pages/qrcode/qrcode",
+    "pages/record/record"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "易通门禁",
+    "navigationBarTextStyle":"black"
+  }
+}

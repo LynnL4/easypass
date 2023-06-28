@@ -1,0 +1,15 @@
+<!--pages/community/community.wxml-->
+<van-cell-group>
+<block wx:for="{{ authList }}" ws:for-item="item" wx:key="*this">
+  <van-cell
+    value="{{ item.community_name }}"
+    title="{{ item.user_name }}"
+    icon="{{ item.avaurl }}"
+    is-link
+    url='/pages/auth/auth-detail?id={{ item.id }}'
+  />
+</block>
+</van-cell-group>
+<van-tabbar bindtap="onPlus">
+  <van-tabbar-item icon="plus">添加授权</van-tabbar-item>
+</van-tabbar>

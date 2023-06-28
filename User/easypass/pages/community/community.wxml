@@ -1,0 +1,36 @@
+<!--pages/community/community.wxml-->
+<van-tabs swipeable="true">
+  <van-tab title="已认证">
+   <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+      <block wx:for="{{ community_auth }}" ws:for-item="item" wx:key="*this">
+         <van-collapse-item title="{{ item.community_name }}" name=" {{ item.id }} " icon="hotel-o">
+          <van-icon name="location-o" />{{ item.address }}
+          <view><van-icon name="wap-home" />单位: {{ item.building }} 楼层: {{ item.floor}} 住宅: {{ item.number}}</view>
+         </van-collapse-item>
+      </block>
+</van-collapse>
+  </van-tab>
+  <van-tab title="认证中">
+  <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+    <block wx:for="{{ community_authing }}" ws:for-item="item" wx:key="*this">
+         <van-collapse-item title="{{ item.community_name }}" name=" {{ item.id }} " icon="hotel-o">
+          <van-icon name="location-o" />{{ item.address }} 
+          <view><van-icon name="wap-home" />单位: {{ item.building }} 楼层: {{ item.floor}} 住宅: {{ item.number}}</view>
+         </van-collapse-item>
+      </block>
+  </van-collapse>    
+  </van-tab>
+  <van-tab title="被驳回">
+  <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+    <block wx:for="{{ community_reject }}" ws:for-item="item" wx:key="*this">
+         <van-collapse-item title="{{ item.community_name }}" name=" {{ item.id }} " icon="hotel-o">
+          <van-icon name="location-o" />{{ item.address }}
+          <view><van-icon name="wap-home" />单位: {{ item.building }} 楼层: {{ item.floor}} 住宅: {{ item.number}}</view>
+         </van-collapse-item>
+      </block>
+  </van-collapse>    
+  </van-tab>
+</van-tabs>
+<van-tabbar bindtap="onPlus">
+  <van-tabbar-item icon="plus">添加小区</van-tabbar-item>
+</van-tabbar>

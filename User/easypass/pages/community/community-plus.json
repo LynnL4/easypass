@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "van-field": "/dist/field/index",
+    "van-tabbar": "/dist/tabbar/index",
+    "van-tabbar-item": "/dist/tabbar-item/index",
+    "van-area": "/dist/area/index",
+    "van-toast": "/dist/toast/index",
+    "van-popup": "/dist/popup/index",
+    "van-button": "/dist/button/index",
+    "van-picker": "/dist/picker/index",
+    "van-dialog": "/dist/dialog/index"
+  }
+  
+}

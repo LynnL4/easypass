@@ -1,0 +1,64 @@
+<!--pages/community/community.wxml-->
+<van-tabs swipeable="true">
+  <van-tab title="我的">
+   <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+    <block wx:for="{{ selfRecord }}" ws:for-item="item" wx:key="*this">
+        <block wx:if="{{ item.mode == 0 }}">
+           <van-collapse-item title="{{ item.user_name }}" name="{{ item.id }}" value="{{ item.community_name }}" icon="{{ item.avaurl }}">
+           <view>
+            <van-icon name="bulb-o" />位置: {{ item.toward }}
+          </view>
+          <view>
+            <van-icon name="underway-o" />时间: {{ item.record_time }}
+          </view>
+          <view>
+            <van-icon name="bulb-o" />描述: {{ item.description }}
+          </view>
+          <view>
+            <van-icon name="location-o" />地址: {{ item.address }}
+          </view>
+         </van-collapse-item>  
+        </block>
+        <block wx:else>
+          <van-collapse-item title="{{ item.user_name }}-访客" name="{{ item.id }}" value="{{ item.community_name }}" icon="{{ item.avaurl }}">
+          <view>
+            <van-icon name="bulb-o" />位置: {{ item.toward }}
+          </view>
+          <view>
+            <van-icon name="underway-o" />时间: {{ item.record_time }}
+          </view>
+          <view>
+            <van-icon name="bulb-o" />描述: {{ item.description }}
+          </view>
+          <view>
+            <van-icon name="location-o" />地址: {{ item.address }}
+          </view>
+         </van-collapse-item>  
+        </block>
+      </block>
+  </van-collapse>    
+  </van-tab>
+  <van-tab title="访客">
+  <van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+    <block wx:for="{{ guestRecord }}" ws:for-item="item" wx:key="*this">
+         <van-collapse-item title="{{ item.user_name }}" name="{{ item.id }}" value="{{ item.community_name }}" icon="{{ item.avaurl }}">
+          <view>
+            <van-icon name="bulb-o" />位置: {{ item.toward }}
+          </view>
+          <view>
+            <van-icon name="underway-o" />时间: {{ item.record_time }}
+          </view>
+          <view>
+            <van-icon name="bulb-o" />描述: {{ item.description }}
+          </view>
+          <view>
+            <van-icon name="location-o" />地址: {{ item.address }}
+          </view>
+         </van-collapse-item>  
+      </block>
+  </van-collapse>    
+  </van-tab>
+</van-tabs>
+<van-tabbar bindtap="onReturn">
+  <van-tabbar-item icon="replay">返回</van-tabbar-item>
+</van-tabbar>  

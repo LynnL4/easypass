@@ -1,0 +1,103 @@
+<van-cell-group  border="{{ false }}">
+ <van-field
+    value="{{ user.name }}"
+    label="用户ID"
+    placeholder="请输入用户名"
+    border="{{ false }}"
+    icon="search"
+    bind:blur="userCheck"
+  />
+
+  <van-field
+    value="{{ community.name }}"
+    type="text"
+    label="小区"
+    placeholder="点击右侧搜索按钮"
+    border="{{ false }}"
+     icon="arrow-down"
+    bind:click-icon="communityTogglePopup"
+    readonly
+  />
+
+ <van-field
+    value="{{ timeBegin }}"
+    type="text"
+    label="开始时间"
+    placeholder="点击右侧按钮"
+    icon="clock-o"
+    border="{{ false }}"
+    bind:click-icon="timeBeginPickerShow"
+    readonly
+  />
+  <van-field
+    value="{{ timeEnd }}"
+    type="text"
+    label="结束时间"
+    placeholder="点击右侧按钮"
+    border="{{ false }}"
+    icon="clock-o"
+    bind:click-icon="timeEndPickerShow"
+    readonly
+  />
+
+<van-cell
+border="{{ false }}"
+>
+ 
+  <view slot="title">
+    <view class="van-cell-text">访问次数</view>
+  </view>
+  <view slot="" >
+    <van-stepper
+    value="{{ times }}"
+    integer
+    min="1"
+    max="5"
+    step="1"
+    bind:change="onTimesChange"
+  />
+   </view>
+</van-cell>
+ 
+</van-cell-group>
+
+<van-popup
+  show="{{ timePicker }}"
+  position="bottom"
+>
+  <van-datetime-picker
+    type="datetime"
+    data-type="datetime"
+    loading="{{ loading }}"
+    value="{{ currentDate }}"
+    min-date="{{ minDate }}"
+    bind:confirm="timePick"
+    bind:cancel="timeCancel"
+  />
+</van-popup>
+
+
+
+  <van-popup
+    show="{{ community.state }}"
+    position="bottom"
+    custom-class="bottom"
+    bind:close="communityTogglePopup"
+    bind:click-overlay = "communityClosePopup"
+  >
+  <van-picker
+   show-toolbar
+   title="小区"
+   columns="{{ community.communityList }}"
+   bind:change="onCommunityChange"
+   bind:cancel="onCommunityCancel"
+   bind:confirm="onCommunityConfirm"
+  />
+  </van-popup>
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+<van-toast id="custom-selector" />
+<van-tabbar active-color="#07c160" bindtap="onSubmit">
+  <van-tabbar-item icon="success">提交</van-tabbar-item>
+</van-tabbar>

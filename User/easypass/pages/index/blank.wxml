@@ -1,0 +1,15 @@
+
+
+<!-- 需要使用 button 来授权登录 -->
+<block wx:if = "{{first}}">
+<button
+  open-type="getUserInfo"
+  bindgetuserinfo="bindGetUserInfo"
+>
+  授权登录
+</button>
+<text>第一次使用请先授权，然后出现打开小程序</text>
+</block>
+
+<van-dialog id="van-dialog" />
+<van-toast id="custom-selector" />

@@ -1,0 +1,148 @@
+<!--pages/community/community-plus.wxml-->
+<van-cell-group>
+  
+  <van-field
+    value="{{ area.name }}"
+    label="区域"
+    placeholder="点击右侧图标选择区域"
+    bind:click-icon="areaTogglePopup" 
+    class="demo-margin-right"
+    icon="search"
+    readonly= "true"
+  />
+
+  <van-field
+    value="{{ community.name }}"
+    label="小区"
+    placeholder="点击右侧图标选择区域"
+    bind:click-icon="communityTogglePopup" 
+    class="demo-margin-right"
+    icon="search"
+    readonly= "true"
+  />
+
+   <van-field
+    value="{{ build.name }}"
+    label="单位"
+    placeholder="点击右侧图标选择单位"
+    bind:click-icon="buildTogglePopup" 
+    class="demo-margin-right"
+    icon="search"
+    readonly= "true"
+  />
+
+  <van-field
+    value="{{ floor.name }}"
+    label="楼层"
+    placeholder="点击右侧图标选择楼层"
+    bind:click-icon="floorTogglePopup" 
+    class="demo-margin-right"
+    icon="search"
+    readonly= "true"
+  />
+
+
+  <van-field
+    value="{{ number.name }}"
+    label="门牌"
+    placeholder="点击右侧图标选择门牌"
+    bind:click-icon="numberTogglePopup" 
+    class="demo-margin-right"
+    icon="search"
+    readonly= "true"
+  />
+  
+</van-cell-group>
+
+<van-toast id="van-toast" />
+
+ <van-popup
+    show="{{ area.state }}"
+    position="bottom"
+    custom-class="bottom"
+    bind:close="areaTogglePopup"
+    bind:click-overlay = "areaClosePopup"
+  >
+   <van-area
+    value="{{ area.value}}"
+    loading="{{ area.loading }}"
+    area-list="{{ area.areaList }}"
+    bind:change="onAreaChange"
+    bind:confirm="onAreaConfirm"
+    bind:cancel="onAreaCancel"
+  />
+  </van-popup>
+
+   <van-popup
+    show="{{ community.state }}"
+    position="bottom"
+    custom-class="bottom"
+    bind:close="communityTogglePopup"
+    bind:click-overlay = "communityClosePopup"
+  >
+  <van-picker
+   show-toolbar
+   title="小区"
+   columns="{{ community.communityList }}"
+   bind:change="onCommunityChange"
+   bind:cancel="onCommunityCancel"
+   bind:confirm="onCommunityConfirm"
+  />
+  </van-popup>
+
+  <van-popup
+    show="{{ build.state }}"
+    position="bottom"
+    custom-class="bottom"
+    bind:close="buildTogglePopup"
+    bind:click-overlay = "buildClosePopup"
+  >
+  <van-picker
+   show-toolbar
+   title="单位"
+   columns="{{ build.buildList }}"
+   bind:change="onBuildChange"
+   bind:cancel="onBuildCancel"
+   bind:confirm="onBuildConfirm"
+  />
+  </van-popup>
+
+   <van-popup
+    show="{{ floor.state }}"
+    position="bottom"
+    custom-class="bottom"
+    bind:close="floorTogglePopup"
+    bind:click-overlay = "floorClosePopup"
+  >
+  <van-picker
+   show-toolbar
+   title="楼层"
+   columns="{{ floor.floorList }}"
+   bind:change="onFloorChange"
+   bind:cancel="onFloorCancel"
+   bind:confirm="onFloorConfirm"
+  />
+  </van-popup>
+
+  <van-popup
+    show="{{ number.state }}"
+    position="bottom"
+    custom-class="bottom"
+    bind:close="numberTogglePopup"
+    bind:click-overlay = "numberClosePopup"
+  >
+  <van-picker
+   show-toolbar
+   title="门牌"
+   columns="{{ number.numberList }}"
+   bind:change="onNumberChange"
+   bind:cancel="onNumberCancel"
+   bind:confirm="onNumberConfirm"
+  />
+  </van-popup>
+
+  <van-dialog id="van-dialog" />
+  <van-toast id="custom-selector" />
+<van-tabbar bindtap="onSubmit">
+  <van-tabbar-item icon="success">提交</van-tabbar-item>
+</van-tabbar>

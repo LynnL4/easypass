@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "van-tabbar": "/dist/tabbar/index",
+    "van-tabbar-item": "/dist/tabbar-item/index",
+    "van-tab": "/dist/tab/index",
+    "van-tabs": "/dist/tabs/index",
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index",
+    "van-field": "/dist/field/index",
+    "van-datetime-picker": "/dist/datetime-picker/index",
+    "van-toast": "/dist/toast/index",
+    "van-popup": "/dist/popup/index",
+    "van-row": "/dist/row/index",
+    "van-col": "/dist/col/index",
+    "van-stepper": "/dist/stepper/index",
+    "van-dialog": "/dist/dialog/index"
+  }
+}

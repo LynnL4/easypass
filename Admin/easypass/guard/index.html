@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EasyPass</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        a{
+            text-decoration:none;
+            color:#fff;
+        }
+        html{
+            width:100%;
+            height:100%;
+            font-size:16px;
+        }
+        body{
+            width:100%;
+            height:100%;
+
+        }
+        .total{
+            width:100%;
+            height:100%;
+            /*background:url(/static/img/bg2.jpeg) no-repeat;*/
+            background-size:100% 100%;
+            overflow: hidden;
+            /*background-color: #322F42;*/
+        }
+        #back_upper{
+            display: block;
+            width:4rem;
+            height:4rem;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            background:url(http://img0.ph.126.net/7vVoDLyELLu5Ti2agzvxjA==/106116066320155563.png) no-repeat;
+            opacity:1;
+        }
+        #v{
+            width:640px;
+            height:480px;
+        }
+        #qr-canvas{
+            display:none;
+        }
+        #outdiv
+        {
+
+        }
+        .scanning_frame{
+            margin:5rem auto;
+            width:646px;
+            height:486px;
+            border: 3px solid #000;
+            position: relative
+        }
+        .infor{
+            width:15rem;
+            height: 4rem;
+            text-align: center;
+            line-height: 4rem;
+            background:#d81e06;
+            color: #fff;
+            border-radius: 2rem;
+            opacity: 0.6;
+            margin:0 auto;
+        }
+        #result{
+            width:15rem;
+            height:4rem;
+            font-size:2rem;
+            text-align: center;
+            line-height: 4rem;
+            margin:0 auto;
+            color: #d81e06;
+        }
+        /*加载动画效果*/
+        .spinner {
+            width: 240px;
+            height: 240px;
+            position: absolute;
+            top:120px;
+            left: 200px;
+            /*background-color: #fff;*/
+        }
+
+        .double-bounce1, .double-bounce2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #d81e06;
+            opacity: 0.6;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-animation: bounce 2.0s infinite ease-in-out;
+            animation: bounce 2.0s infinite ease-in-out;
+        }
+
+        .double-bounce2 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+
+        @-webkit-keyframes bounce {
+            0%, 100% { -webkit-transform: scale(0.0) }
+            50% { -webkit-transform: scale(1.0) }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: scale(0.0);
+                -webkit-transform: scale(0.0);
+            }
+            50% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+        }
+    </style>
+</head>
+
+
+<body data-type="login">
+<script src="assets/js/theme.js"></script>
+<div class="am-g tpl-g">
+    <!-- 风格切换 -->
+    <div class="tpl-skiner">
+        <div class="tpl-skiner-toggle am-icon-cog">
+        </div>
+        <div class="tpl-skiner-content">
+            <div class="tpl-skiner-content-title">
+                <a href="login.html">设置</a>
+            </div>
+            <div class="tpl-skiner-content-title">
+                选择主题
+            </div>
+            <div class="tpl-skiner-content-bar">
+                <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                <span class="skiner-color skiner-black" data-color="theme-black"></span>
+            </div>
+        </div>
+    </div>
+    <div class="tpl-login">
+        <div class="total">
+            <!-- 扫码区域 -->
+            <div id="outdiv" class="scanning_frame">
+                <video id="v" autoplay></video>
+                <canvas id="qr-canvas"></canvas>
+                <!--加载动画-->
+                <div class="spinner" id="loading">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="toast">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">提示
+            <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+        </div>
+        <div class="am-modal-bd" id="toast-content">
+
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/amazeui.min.js"></script>
+<script src="js/settings.js"></script>
+<script type="text/javascript" src="js/grid.js"></script>
+<script type="text/javascript" src="js/version.js"></script>
+<script type="text/javascript" src="js/detector.js"></script>
+<script type="text/javascript" src="js/formatinf.js"></script>
+<script type="text/javascript" src="js/errorlevel.js"></script>
+<script type="text/javascript" src="js/bitmat.js"></script>
+<script type="text/javascript" src="js/datablock.js"></script>
+<script type="text/javascript" src="js/bmparser.js"></script>
+<script type="text/javascript" src="js/datamask.js"></script>
+<script type="text/javascript" src="js/rsdecoder.js"></script>
+<script type="text/javascript" src="js/gf256poly.js"></script>
+<script type="text/javascript" src="js/gf256.js"></script>
+<script type="text/javascript" src="js/decoder.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
+<script type="text/javascript" src="js/findpat.js"></script>
+<script type="text/javascript" src="js/alignpat.js"></script>
+<script type="text/javascript" src="js/databr.js"></script>
+<script>
+    $(function (){
+        clearCookie("account_id");
+        clearCookie("area_id");
+        clearCookie("role_id");
+    });
+</script>
+<script src="js/webcam.js"></script>
+<script type="text/javascript">load()</script>
+
+</body>
+
+</html>

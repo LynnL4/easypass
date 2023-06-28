@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EasyPass</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <script src="assets/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/jquery.min.js"></script>
+
+</head>
+
+<body data-type="index">
+    <script src="assets/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            <!-- logo -->
+            <div class="am-fl tpl-header-logo">
+                <a href="javascript:;"><img src="assets/img/logo.png" alt=""></a>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="tpl-header-fluid">
+                <!-- 侧边切换 -->
+                <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+                </div>
+                <!-- 搜索 -->
+                <div class="am-fl tpl-header-search">
+                    <form class="tpl-header-search-form" action="javascript:;">
+                        <button class="tpl-header-search-btn am-icon-search"></button>
+                        <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
+                    </form>
+                </div>
+                <!-- 其它功能-->
+                <div class="am-fr tpl-header-navbar">
+                    <ul>
+                        <!-- 欢迎语 -->
+                        <li class="am-text-sm tpl-header-navbar-welcome">
+                            <a href="javascript:;">欢迎你, <span id="user-name"></span> </a>
+                        </li>
+
+                        <!-- 新邮件 -->
+                        <li class="am-dropdown tpl-dropdown" data-am-dropdown>
+                            <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
+                                <i class="am-icon-envelope"></i>
+                                <span class="am-badge am-badge-success am-round item-feed-badge"></span>
+                            </a>
+                            <!-- 弹出列表 -->
+                            <ul class="am-dropdown-content tpl-dropdown-content">
+                                <li class="tpl-dropdown-menu-messages">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                        <i class="am-icon-circle-o"></i> 进入列表…
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 新提示 -->
+                        <li class="am-dropdown" data-am-dropdown>
+                            <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
+                                <i class="am-icon-bell"></i>
+                                <span class="am-badge am-badge-warning am-round item-feed-badge"></span>
+                            </a>
+
+                            <!-- 弹出列表 -->
+                            <ul class="am-dropdown-content tpl-dropdown-content">
+                                <li class="tpl-dropdown-menu-notifications">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                        <i class="am-icon-bell"></i> 进入列表…
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 退出 -->
+                        <li class="am-text-sm">
+                            <a href="javascript:;" onclick="quit()">
+                                <span class="am-icon-sign-out"></span> 退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+        <!-- 风格切换 -->
+        <div class="tpl-skiner">
+            <div class="tpl-skiner-toggle am-icon-cog">
+            </div>
+            <div class="tpl-skiner-content">
+                <div class="tpl-skiner-content-title">
+                    选择主题
+                </div>
+                <div class="tpl-skiner-content-bar">
+                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边导航栏 -->
+        <div class="left-sidebar">
+            <!-- 用户信息 -->
+            <div class="tpl-sidebar-user-panel">
+                <div class="tpl-user-panel-slide-toggleable">
+                    <div class="tpl-user-panel-profile-picture" id="avaurl">
+
+                    </div>
+                    <span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+              超级管理员
+          </span>
+                    <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
+                </div>
+            </div>
+
+
+            <!-- 菜单 -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-link">
+                    <a href="index.html" class="active">
+                        <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="notice-list.html">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 通知公告
+                    </a>
+                </li>
+
+                <li class="sidebar-nav-link">
+                      <a href="users.html">
+                            <span class="am-icon-sitemap sidebar-nav-link-logo"></span> 角色管理
+                       </a>
+                </li>
+
+                <li class="sidebar-nav-link">
+                     <a href="area.html">
+                          <span class="am-icon-map sidebar-nav-link-logo"></span> 区域列表
+                      </a>
+                 </li>
+            </ul>
+        </div>
+
+
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+            <div class="row-content am-cf">
+                <div class="row  am-cf">
+                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                        <div class="widget widget-success am-cf">
+                            <div class="widget-statistic-header">
+                                本日新增用户数
+                            </div>
+                            <div class="widget-statistic-body">
+                                <div class="widget-statistic-value" id="newA">
+
+                                </div>
+                                <span class="widget-statistic-icon am-icon-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                        <div class="widget widget-primary am-cf">
+                            <div class="widget-statistic-header">
+                                本月新增小区数
+                            </div>
+                            <div class="widget-statistic-body">
+                                <div class="widget-statistic-value"  id="newC">
+
+                                </div>
+                                <span class="widget-statistic-icon am-icon-institution"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                        <div class="widget widget-purple am-cf">
+                            <div class="widget-statistic-header">
+                                用户总数
+                            </div>
+                            <div class="widget-statistic-body">
+                                <div class="widget-statistic-value"  id="sumA">
+
+                                </div>
+                                <span class="widget-statistic-icon am-icon-group"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row am-cf">
+                    <div class="am-u-sm-12 am-u-md-8">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">新增用户数</div>
+                            </div>
+                            <div class="widget-body-md widget-body tpl-amendment-echarts am-fr" id="tpl-echarts">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="am-u-sm-12 am-u-md-4">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">专用服务器负载</div>
+                            </div>
+                            <div class="widget-body widget-body-md am-fr">
+
+                                <div class="am-progress-title">CPU  占用率 <span id="cpuInfo" class="am-fr am-progress-title-more"> 获取中...</span></div>
+                                <div class="am-progress">
+                                    <div id="cpuInfoBar" class="am-progress-bar" style="width: 0%"></div>
+                                </div>
+                                <div class="am-progress-title">内存 占用率 <span id="memoryInfo" class="am-fr am-progress-title-more"> 获取中...</span></div>
+                                <div class="am-progress">
+                                    <div id="memoryInfoBar" class="am-progress-bar  am-progress-bar-warning" style="width: 0%"></div>
+                                </div>
+                                <div class="am-progress-title">磁盘 占用率 <span id="diskInfo" class="am-fr am-progress-title-more"> 获取中...</span></div>
+                                <div class="am-progress">
+                                    <div id="diskInfoBar" class="am-progress-bar am-progress-bar-danger" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row am-cf">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-4 widget-margin-bottom-lg ">
+                        <div class="tpl-user-card am-text-center widget-body-lg">
+                            <img class="" src="assets/img/logoq.png" alt="" style="width: 50%">
+                        </div>
+                    </div>
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-8 widget-margin-bottom-lg">
+
+                        <div class="widget am-cf widget-body-lg">
+
+                            <div class="widget-body  am-fr">
+                                <div class="am-scrollable-horizontal ">
+                                    <table width="100%" class="am-table am-table-compact am-text-nowrap tpl-table-black ">
+                                        <thead>
+                                            <tr>
+                                                <th>公告标题</th>
+                                                <th>作者</th>
+                                                <th>时间</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="notifyList">
+                                            <!-- data -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                /*footer*/
+                .footer,
+                .footer *{box-sizing: border-box; margin-top: 20px;}
+
+                /*底部导航*/
+                .footer{background: #e9ecf3;padding: 10px 0 10px 0;box-sizing: border-box;}
+                .footer {width: 100%;margin: 0 auto; text-align: center;}
+                .footer p{display: inline-block;font-size: 14px;color: #d9d8d8;font-weight: bold;}
+                .footer .info{padding-top: 7px;font-size: 12px;color: #a5a5a5;}
+            </style>
+            <div class="footer" >
+                <p class="info" >
+                    <a href="http://www.miibeian.gov.cn" target="_blank">粤ICP备19021866号</a>&emsp;&emsp;©2019-2019 某某某某 版权所有
+                    <br/>
+                    中国广东省肇庆市端州区肇庆大道 电话：0758-******** 传真：0758-****** 邮编：526061
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/amazeui.datatables.min.js"></script>
+    <script src="assets/js/dataTables.responsive.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="js/setIndexInfo.js"></script>
+</body>
+
+</html>

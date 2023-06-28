@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-tabbar": "/dist/tabbar/index",
+    "van-tabbar-item": "/dist/tabbar-item/index",
+    "van-tab": "/dist/tab/index",
+    "van-tabs": "/dist/tabs/index",
+    "van-collapse": "/dist/collapse/index",
+    "van-collapse-item": "/dist/collapse-item/index",
+    "van-icon": "/dist/icon/index"
+  }
+}

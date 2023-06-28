@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view style='margin-top:20px;'><text style='color:white;font-size:14px;'>用户编码： {{ login_name }}</text></view>
+</view>
+
+<navigator url='/pages/community/community'> 
+  <van-cell icon="hotel-o" is-link>
+   <view slot="title">
+     <view class="van-cell-text">小区认证</view>
+   </view>
+  </van-cell>
+</navigator>
+
+<navigator url='/pages/auth/auth'> 
+  <van-cell icon="edit" is-link>
+    <view slot="title">
+     <view class="van-cell-text">授权管理</view>
+   </view>
+  </van-cell>
+</navigator>
+
+<navigator url='/pages/record/record'> 
+<van-cell icon="clock-o" is-link>
+  <view slot="title">
+    <view class="van-cell-text">访问记录</view>
+  </view>
+</van-cell>
+</navigator>
+
+  <van-dialog id="van-dialog" />
+
+  <van-tabbar active="{{ active }}" bind:change="onChange">
+   <van-tabbar-item icon="qr">门禁卡</van-tabbar-item>
+  <van-tabbar-item icon="manager-o">我的</van-tabbar-item>
+</van-tabbar>
+

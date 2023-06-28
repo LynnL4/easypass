@@ -1,0 +1,6 @@
+/* pages/access/access.wxss */
+@import "../template/guestCard.wxss";
+@import "../template/proCard.wxss";
+page{
+  background:#667eea;
+}

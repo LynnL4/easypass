@@ -1,0 +1,26 @@
+<!--pages/access/access.wxml-->
+<import src="../template/guestCard.wxml" />
+<import src="../template/proCard.wxml" />
+<van-tabs swipeable="true">
+  <van-tab title="业主模式">
+    <view class='card_list'>
+      <block wx:for="{{proCards}}"  wx:for-item="card" wx:key="*this">
+        <template is="proCard" data="{{ card }}"></template>
+      </block>
+    </view>
+  </van-tab>
+  <van-tab title="访客模式">
+     <view class='card_list'>
+      <block wx:for="{{guestCards}}"  wx:for-item="card" wx:key="*this">
+        <template is="guestCard" data="{{ card }}"></template>
+      </block>
+    </view>
+  </van-tab>
+</van-tabs>
+  <van-dialog id="van-dialog" />
+  <van-toast id="custom-selector" />
+<van-tabbar active="{{ active }}" bind:change="onChange">
+   <van-tabbar-item icon="qr">门禁卡</van-tabbar-item>
+  <van-tabbar-item icon="manager-o">我的</van-tabbar-item>
+</van-tabbar>
+

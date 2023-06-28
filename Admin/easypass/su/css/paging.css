@@ -1,0 +1,103 @@
+/* Paging */
+ #paging {
+     overflow: hidden;
+     width: 100%;
+     margin-top: 60px;
+     margin-bottom: 30px;
+     text-align: center;
+     color: #0099ff;
+
+     user-select: none;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+ }
+ #paging .list{
+     margin-top: 0px;
+ }
+ #paging .first,
+ #paging .last,
+ #paging .go{
+     height:0;
+     overflow: hidden;
+ }
+ #paging .prev,
+ #paging .next,
+ #paging .list li {
+     display: inline-block;
+     line-height: 30px;
+     margin: 0 4px;
+     padding: 0 10px;
+     border: 1px solid #ddd;
+     cursor: default;
+     border-radius: 4px;
+     vertical-align: top;
+ }
+ #paging .list {
+     display: inline-block;
+     vertical-align: top;
+ }
+ #paging .list li {
+     width: 30px;
+     padding: 0;
+     text-align: center;
+ }
+ #paging .list li.cur {
+     color: #fff;
+     background-color: #0099ff;
+     border-color: #428bca;
+ }
+ #paging .disable {
+     color: #bfbfbf;
+     cursor: not-allowed;
+ }
+
+ #paging input::-webkit-input-placeholder { color: #bfbfbf; }
+ #paging input::-moz-input-placeholder { color: #bfbfbf; }
+ #paging input:-ms-input-placeholder { color: #bfbfbf; }
+
+ @media (min-width: 768px) {
+     #paging .first,
+     #paging .last,
+     #paging .prev,
+     #paging .next,
+     #paging .list li {
+         display: inline-block;
+         line-height: 30px;
+         height:auto;
+         margin: 0 4px;
+         padding: 0 10px;
+         border: 1px solid #ddd;
+         cursor: default;
+         border-radius: 4px;
+         vertical-align: top;
+     }
+
+     #paging .go {
+         display: none;
+         position: relative;
+         max-width: 150px;
+         height: 30px;
+         border: 1px solid #ddd;
+         border-radius: 4px;
+     }
+     #paging .go input {
+         float: left;
+         width: 60%;
+         height: 30px;
+         line-height: 30px;
+         padding: 0 6px;
+         font-size: 16px;
+         box-sizing: border-box;
+         color: #0099ff;
+     }
+     #paging .go button {
+         float: left;
+         width: 40%;
+         height: 100%;
+         cursor: pointer;
+         color: #fff;
+         background-color: #0099ff;
+         border-radius: 0 4px 4px 0;
+     }
+ }

@@ -1,0 +1,30 @@
+<template name="guestCard">
+<view class='card card-style{{card.id%3+1}}' bindtap="qrcodeCard" data-id="{{card.id}}">
+  <view style='display:flex; flex-direction:row; padding:15px;'>
+    <view style='width:70%;padding-right:10px;display:flex; flex-direction:column;'>
+       <view style='padding-bottom:10px; display:flex; flex-direction:row'>      
+         <view><image src='/images/community-white.png' style='width:32px;height:32px;opacity:0.5;'></image></view>
+            <view style='margin-top:5px; margin-left:10px;font-weight:bold;'>
+            <text>{{card.community_name}}</text>
+          </view>
+        </view>
+        <view style='padding-bottom:10px; display:flex; flex-direction:row'>      
+          <view><image src='/images/time-white.png' style='width:32px;height:32px;opacity:0.5;'></image></view>
+          <view style='margin-top:5px; margin-left:10px;font-size:12px;'>
+            <text>{{card.time_limit_start}}\n{{card.time_limit_end}} </text>
+          </view>
+        </view>
+        <view style='padding-bottom:10px; display:flex; flex-direction:row'>      
+          <view><image src='/images/address-white.png' style='width:32px;height:32px;opacity:0.5;'></image></view>
+          <view style='margin-top:5px; margin-left:10px;font-size:14px;'>
+            <text>{{card.address}}</text>
+          </view>
+        </view>
+      </view>
+      <view style='display:flex; flex-direction:column;padding-top:30px'>
+        <view style='font-size:60px;margin-left:10px;'><text>{{ card.times }}</text><text style='font-size:12px;'>次</text></view>
+        <text></text>
+        </view>
+      </view>
+  </view>
+ </template>

@@ -1,0 +1,26 @@
+.card_list{
+  margin-top:-10px;
+  margin-bottom:80px; 
+  display:flex;      
+  flex-direction:column;
+  color:white;
+}
+.card{
+  height:180px;
+  width:90%;
+  margin:0 auto;
+  margin-top:40px;
+  border-radius: 15rpx;
+  box-shadow:40rpx 40rpx 100rpx #3751c4;
+}
+
+.card-style1{
+  background:linear-gradient(to bottom right,#50BFF2,#D291FB);
+}
+.card-style2{
+  background:linear-gradient(to bottom right,#FF83FA,rgb(255, 199, 114));  
+}
+
+.card-style3{
+  background:linear-gradient(to bottom right,rgb(10, 231, 231),rgb(69, 255, 162)); 
+}
